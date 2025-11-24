@@ -1,0 +1,27 @@
+/* LIGHT MODE */
+:root {
+  --primary: var(--brand-primary);
+  --primary-foreground: white;
+
+  --secondary: var(--brand-secondary);
+  --secondary-foreground: var(--brand-gray-900);
+
+  --destructive: var(--brand-danger);
+
+  --muted: var(--brand-gray-50);
+  --muted-foreground: var(--brand-gray-600);
+
+  --border: var(--brand-gray-100);
+}
+
+/* DARK MODE */
+.dark {
+  --primary: var(--brand-gray-100);
+  --primary-foreground: var(--brand-gray-900);
+
+  --secondary: var(--brand-gray-600);
+  --secondary-foreground: white;
+
+  --muted: var(--brand-gray-600);
+  --muted-foreground: var(--brand-gray-100);
+}
