@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Badge } from '../atoms/Badge';
-import { Button } from '../atoms/Button';
+import { Badge } from '@/shared/components/atoms/Badge';
+import { Button } from '@/shared/components/atoms/Button';
 
 interface Column {
   key: string;

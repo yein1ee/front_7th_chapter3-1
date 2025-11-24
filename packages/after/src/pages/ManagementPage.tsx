@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Badge } from '../components/atoms';
-import { Alert, Table, Modal } from '../components/organisms';
-import { FormInput, FormSelect, FormTextarea } from '../components/molecules';
-import { userService } from '../services/userService';
-import { postService } from '../services/postService';
-import type { User } from '../services/userService';
-import type { Post } from '../services/postService';
-import '../styles/components.css';
+import { Button, Badge } from '@/shared/components/atoms';
+import { Alert, Table, Modal } from '@/shared/components/organisms';
+import { FormInput, FormSelect, FormTextarea } from '@/shared/components/molecules';
+import { userService } from '@/services/userService';
+import { postService } from '@/services/postService';
+import type { User } from '@/services/userService';
+import type { Post } from '@/services/postService';
+import '@/styles/components.css';
 
 type EntityType = 'user' | 'post';
 type Entity = User | Post;
