@@ -1,7 +1,6 @@
-import React from 'react'
-import { Header } from '@/shared/components/organisms'
-import { ManagementPage } from '@/pages/ManagementPage'
-import '@/styles/components.css'
+import React from 'react';
+import { Header } from '@/shared/components/organisms';
+import { ManagementPage } from '@/pages/ManagementPage';
 
 export const App: React.FC = () => {
   return (
