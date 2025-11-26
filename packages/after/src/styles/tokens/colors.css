@@ -38,6 +38,37 @@
   --input: theme(colors.slate.200);
   --ring: theme(colors.blue.400);
 
+  /* Badge: user roles */
+  --badge-role-admin: theme(colors.violet.600);
+  --badge-role-admin-foreground: theme(colors.white);
+  --badge-role-moderator: theme(colors.indigo.600);
+  --badge-role-moderator-foreground: theme(colors.white);
+  --badge-role-user: theme(colors.slate.200);
+  --badge-role-user-foreground: theme(colors.slate.900);
+
+  /* Badge: user & post statuses */
+  --badge-status-active: theme(colors.emerald.600);
+  --badge-status-active-foreground: theme(colors.white);
+  --badge-status-inactive: theme(colors.slate.300);
+  --badge-status-inactive-foreground: theme(colors.slate.700);
+  --badge-status-suspended: theme(colors.amber.500);
+  --badge-status-suspended-foreground: theme(colors.slate.950);
+
+  --badge-status-published: theme(colors.emerald.600);
+  --badge-status-published-foreground: theme(colors.white);
+  --badge-status-draft: theme(colors.amber.400);
+  --badge-status-draft-foreground: theme(colors.slate.950);
+  --badge-status-archived: theme(colors.slate.300);
+  --badge-status-archived-foreground: theme(colors.slate.700);
+
+  /* Badge: post categories */
+  --badge-category-development: theme(colors.blue.600);
+  --badge-category-development-foreground: theme(colors.white);
+  --badge-category-design: theme(colors.fuchsia.500);
+  --badge-category-design-foreground: theme(colors.white);
+  --badge-category-accessibility: theme(colors.teal.600);
+  --badge-category-accessibility-foreground: theme(colors.white);
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -86,6 +117,37 @@
   --border: theme(colors.slate.800);
   --input: theme(colors.slate.800);
   --ring: theme(colors.blue.500);
+
+  /* Badge: user roles (dark) */
+  --badge-role-admin: theme(colors.violet.400);
+  --badge-role-admin-foreground: theme(colors.slate.950);
+  --badge-role-moderator: theme(colors.indigo.400);
+  --badge-role-moderator-foreground: theme(colors.slate.950);
+  --badge-role-user: theme(colors.slate.700);
+  --badge-role-user-foreground: theme(colors.slate.50);
+
+  /* Badge: user & post statuses (dark) */
+  --badge-status-active: theme(colors.emerald.500);
+  --badge-status-active-foreground: theme(colors.slate.950);
+  --badge-status-inactive: theme(colors.slate.600);
+  --badge-status-inactive-foreground: theme(colors.slate.50);
+  --badge-status-suspended: theme(colors.amber.400);
+  --badge-status-suspended-foreground: theme(colors.slate.950);
+
+  --badge-status-published: theme(colors.emerald.500);
+  --badge-status-published-foreground: theme(colors.slate.950);
+  --badge-status-draft: theme(colors.amber.300);
+  --badge-status-draft-foreground: theme(colors.slate.950);
+  --badge-status-archived: theme(colors.slate.700);
+  --badge-status-archived-foreground: theme(colors.slate.50);
+
+  /* Badge: post categories (dark) */
+  --badge-category-development: theme(colors.blue.400);
+  --badge-category-development-foreground: theme(colors.slate.950);
+  --badge-category-design: theme(colors.fuchsia.400);
+  --badge-category-design-foreground: theme(colors.slate.950);
+  --badge-category-accessibility: theme(colors.teal.400);
+  --badge-category-accessibility-foreground: theme(colors.slate.950);
 
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components';
-import { Badge } from '@/shared/components/atoms/Badge';
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell, Badge } from '@/components';
 import { Button } from '@/components';
 import type { User } from '@/services';
 import type { TableColumn } from '@/types';
+import { getUserRoleBadge, getUserStatusBadge } from '@/pages/management/viewModel';
 
 type UserTableProps = {
   data: User[];
@@ -15,14 +15,13 @@ type UserTableProps = {
 export const UserTable: React.FC<UserTableProps> = ({ data, columns, onEdit, onDelete }) => {
   const renderCell = (user: User, key: string) => {
     if (key === 'role') {
-      return <Badge userRole={user.role} />;
+      const { label, variant } = getUserRoleBadge(user.role);
+      return <Badge variant={variant}>{label}</Badge>;
     }
 
     if (key === 'status') {
-      const badgeStatus =
-        user.status === 'active' ? 'published' : user.status === 'inactive' ? 'draft' : 'rejected';
-
-      return <Badge status={badgeStatus} />;
+      const { label, variant } = getUserStatusBadge(user.status);
+      return <Badge variant={variant}>{label}</Badge>;
     }
 
     if (key === 'lastLogin') {

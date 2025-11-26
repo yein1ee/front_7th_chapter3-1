@@ -85,3 +85,78 @@ export const getManagementColumns = (entityType: EntityType): TableColumn[] => {
     { key: 'actions', header: '관리', width: '250px' },
   ];
 };
+
+export type ManagementBadgeVariant =
+  | 'default'
+  | 'secondary'
+  | 'destructive'
+  | 'outline'
+  // 역할(Role)용 배지
+  | 'roleAdmin'
+  | 'roleModerator'
+  | 'roleUser'
+  // 상태(Status)용 배지
+  | 'statusActive'
+  | 'statusInactive'
+  | 'statusSuspended'
+  | 'statusPublished'
+  | 'statusDraft'
+  | 'statusArchived'
+  // 카테고리(Category)용 배지
+  | 'categoryDevelopment'
+  | 'categoryDesign'
+  | 'categoryAccessibility';
+
+export type ManagementBadgeProps = {
+  label: string;
+  variant: ManagementBadgeVariant;
+};
+
+export const getUserRoleBadge = (role: User['role']): ManagementBadgeProps => {
+  switch (role) {
+    case 'admin':
+      return { label: '관리자', variant: 'roleAdmin' };
+    case 'moderator':
+      return { label: '운영자', variant: 'roleModerator' };
+    case 'user':
+    default:
+      return { label: '사용자', variant: 'roleUser' };
+  }
+};
+
+export const getUserStatusBadge = (status: User['status']): ManagementBadgeProps => {
+  switch (status) {
+    case 'active':
+      return { label: '활성', variant: 'statusActive' };
+    case 'inactive':
+      return { label: '비활성', variant: 'statusInactive' };
+    case 'suspended':
+    default:
+      return { label: '정지', variant: 'statusSuspended' };
+  }
+};
+
+export const getPostStatusBadge = (status: Post['status']): ManagementBadgeProps => {
+  switch (status) {
+    case 'published':
+      return { label: '게시됨', variant: 'statusPublished' };
+    case 'draft':
+      return { label: '임시저장', variant: 'statusDraft' };
+    case 'archived':
+    default:
+      return { label: '보관됨', variant: 'statusArchived' };
+  }
+};
+
+export const getPostCategoryBadge = (category: Post['category']): ManagementBadgeProps => {
+  switch (category) {
+    case 'development':
+      return { label: 'development', variant: 'categoryDevelopment' };
+    case 'design':
+      return { label: 'design', variant: 'categoryDesign' };
+    case 'accessibility':
+      return { label: 'accessibility', variant: 'categoryAccessibility' };
+    default:
+      return { label: String(category), variant: 'outline' };
+  }
+};

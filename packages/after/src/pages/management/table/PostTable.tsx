@@ -1,9 +1,12 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@/components';
-import { Badge } from '@/shared/components/atoms/Badge';
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell, Badge } from '@/components';
 import { Button } from '@/components';
 import type { Post } from '@/services';
 import type { TableColumn } from '@/types';
+import {
+  getPostCategoryBadge,
+  getPostStatusBadge,
+} from '@/pages/management/viewModel';
 
 type PostTableProps = {
   data: Post[];
@@ -22,24 +25,15 @@ export const PostTable: React.FC<PostTableProps> = ({
 }) => {
   const renderCell = (post: Post, key: string) => {
     if (key === 'category') {
-      const type =
-        post.category === 'development'
-          ? 'primary'
-          : post.category === 'design'
-            ? 'info'
-            : post.category === 'accessibility'
-              ? 'danger'
-              : 'secondary';
-
+      const { label, variant } = getPostCategoryBadge(post.category);
       return (
-        <Badge type={type} pill>
-          {post.category}
-        </Badge>
+        <Badge variant={variant}>{label}</Badge>
       );
     }
 
     if (key === 'status') {
-      return <Badge status={post.status} />;
+      const { label, variant } = getPostStatusBadge(post.status);
+      return <Badge variant={variant}>{label}</Badge>;
     }
 
     if (key === 'views') {
