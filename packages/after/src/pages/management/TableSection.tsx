@@ -1,10 +1,12 @@
 import React from 'react';
-import { Table } from '@/shared/components/organisms';
 import type { EntityType, TableColumn } from '@/types';
+import type { User, Post } from '@/services';
+import { UserTable } from './table/UserTable';
+import { PostTable } from './table/PostTable';
 
 type TableSectionProps = {
   entityType: EntityType;
-  data: any[];
+  data: (User | Post)[];
   columns: TableColumn[];
   onEdit: (item: any) => void;
   onDelete: (id: number) => void;
@@ -18,19 +20,20 @@ export const TableSection: React.FC<TableSectionProps> = ({
   onEdit,
   onDelete,
   onStatusAction,
-}) => (
-  <div className="overflow-auto border border-gray-300 bg-white">
-    <Table
-      columns={columns}
-      data={data}
-      striped
-      hover
-      entityType={entityType}
-      onEdit={onEdit}
-      onDelete={onDelete}
-      onPublish={id => onStatusAction(id, 'publish')}
-      onArchive={id => onStatusAction(id, 'archive')}
-      onRestore={id => onStatusAction(id, 'restore')}
-    />
-  </div>
-);
+}) => {
+  return (
+    <div className="overflow-auto border border-gray-300 bg-white">
+      {entityType === 'user' ? (
+        <UserTable data={data as User[]} columns={columns} onEdit={onEdit} onDelete={onDelete} />
+      ) : (
+        <PostTable
+          data={data as Post[]}
+          columns={columns}
+          onEdit={onEdit}
+          onStatusAction={onStatusAction}
+          onDelete={onDelete}
+        />
+      )}
+    </div>
+  );
+};
